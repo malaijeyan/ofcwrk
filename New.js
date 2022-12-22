@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 
 function New() {
-    const [sports,setSports] = useState();
-    const handleChange = (e)=>{
-        setSports(e.target.value);
-        console.log(e.target.value);
-    }
+  const [gender,setGender] = useState("");
+      // setGender(!gender)
+    // const checked =e.target.value
+    // if(checked === true){
+    //   console.log("checked")
+    // }
+    // else{
+    //   console.log()
+    // }
+    
+    // const element = e.target.value;
+  
+
   return (
-    <div onChange={handleChange}>
-        <input type="checkbox" name="sports" value="tennis" checked={sports === "tennis"}>tennis</input>
-        <input type="checkbox" name="sports" value="football" checked={sports === "football"}>football</input>
-        <input type="checkbox" name="sports" value="volleyball" checked={sports === "volleyball"}>volleyball</input>
+    <div>
+      <input type="checkbox" id="male" name="gender" checked={gender === "male"} onChange={()=>setGender("male")}></input>male
+      <input type="checkbox" id="female" name="gender" checked={gender === "female"}  onChange={()=>setGender("female")}></input>female
     </div>
   )
 }
